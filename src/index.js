@@ -90,7 +90,7 @@ app.post("/withdraw", verifyIfExistsAccountCPF, (request, response) => {
     if(balance < amount) {
         return response.status(400).json({error: "Insufficient funds!"})
     }
-    
+
     const statementOperation = {
         amount,
         created_at: new Date(),
